@@ -1,0 +1,61 @@
+Refer = "https://www.youtube.com/watch?v=uZgRbnIsgrA&ab_channel=JustDjango"
+
+1.create the folder "React and Django"
+2.Inside "React and Django" create folder "Backend" and "Frontend"
+3.Go inside "Backend"
+4.>virtualenv env
+5.>env/Scripts/activate
+6.>pip install django
+7.>django-admin startproject mysite
+8.>cd mysite
+9.>py manage.py runserver
+10.>pip install djangorestframework
+11.>open "react and Django" in vscode
+12.>rename mysite to src
+13.>cd Frontend
+14.>create-react-app gui_mysite  cd gui_mysite
+15.>go to backend ,>py manage.py runserver
+16.>two powershell from front and backend
+18.>cd Backend
+19.>activate the virtual env
+20.>go to Backend  >py manage.py runserver
+21.>in src folder   >python manage.py startapp articles
+22.>now in src/mysite/setting.py  edit below
+a. refer https://www.django-rest-framework.org/#installation
+b.edit settings.py at INSTALLED APPS
+c.edit urls.py at urlpatterns
+d.edit settings.py at the end
+23.>run python amange.py runserver
+>get error of include, then import "include" in urls.py
+24.>go to src/articles/ and edit models.py
+	>add class Article
+25.>python manage.py makemigrations
+   >python manage.py makemigrate
+26.edit src/articles at admin.py
+   >python manage.py runserver   go to localhost:8000/admin
+
+27.>python manage.py createsuperuser
+	username: rahul
+	password: bond2020
+
+
+
+
+
+
+
+
+from articles.models import Article
+from .serializers import ArticleSerializer
+
+class ArticleListView(ListAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+
+class ArticleDetailView(ListAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+
+
+
+
